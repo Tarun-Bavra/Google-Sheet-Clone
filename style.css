@@ -1,10 +1,8 @@
 body {
   margin: 0;
-  /* overflow: hidden; */
 }
 
 .container {
-  margin: 50px 0px;
   height: 80vh;
   width: 100vw;
   display: grid;
@@ -41,15 +39,6 @@ body {
   border: 0.5px solid #c0c0c0;
 }
 
-/* .head-row div:first-child{
-  width: 40px;
-  background-color: gray;
-} */
-
-/* .body {
-  background-color: tomato;
-} */
-
 .sno {
   position: sticky;
   left: 0;
@@ -57,7 +46,7 @@ body {
 }
 
 .sno .sno-cell {
-  height: 30px;
+  height: 20px;
   border: 0.5px solid #c0c0c0;
   display: flex;
   align-items: center;
@@ -67,8 +56,92 @@ body {
 .row {
   display: flex;
 }
+
 .cell {
-  border: 0.5px solid #c0c0c0;
+  border: 0.2px solid #c0c0c0;
   width: 150px;
-  height: 30px;
+  min-height: 20px;
+  height: 20px !important;
+  overflow: hidden;
+  font-size: 12px;
 }
+
+.cell:focus {
+  border-color: blue;
+}
+
+/* ///////////////////////////////////////////////////////////////////// */
+.options {
+  background-color: #f8fbfd;
+  height: 16vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-container {
+  /* padding: 5px; */
+  background-color: #edf2fa;
+  margin: 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 50px;
+}
+
+.fr-aic {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: none;
+}
+
+input[type="color"] {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+input[type="checkbox"]:checked + label,
+input[type="radio"]:checked + label {
+  background-color: #d3e2fd;
+}
+
+label {
+  padding: 8px;
+  border-radius: 2px;
+}
+
+.box {
+  width: 80vw;
+  margin: auto;
+}
+
+.box .selected-cell {
+  background-color: #d3e2fd;
+  padding: 6px;
+  border-radius: 5px;
+  width: 40px;
+  text-align: center;
+}
+
+.box input {
+  flex-grow: 1;
+  padding: 6px;
+  border-radius: 50px;
+  border-width: 0.1px;
+}
+
+.active-cell {       
+  border-color: transparent;
+  outline: 1px solid #0957d0;
+  position: relative;
+  z-index: 10;
+}
+/* 30 jan video at 2:34:00 changed border-color to border-color: #0957d0;,
+but my color did not change , don't know why?  */

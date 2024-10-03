@@ -24,12 +24,28 @@ for (let i = 0; i < rows; i++) {
 for (let i = 1; i <= rows; i++) {
   const row = document.createElement("div");
   row.className = "row";
+
   for (let j = 1; j <= columns; j++) {
     const cell = document.createElement("div");
     cell.className = "cell";
-    row.appendChild(cell);
+    cell.contentEditable = true;
+    cell.id = `${String.fromCharCode(j+64)}${i}`/// have a look at this unique id.
+
+    cell.addEventListener("focus",onFocusCell);
+
+    row.appendChild(cell); 
   }
+
   body.appendChild(row);
 }
 
-
+////////////////////////////////////////////////////////////////////////////
+// document.querySelectorAll('.col-head, .sno-cell').forEach(cell => {
+//   cell.addEventListener('keydown', function(e) {
+//     if (e.key === 'Enter') {
+//       // Prevent default behavior of creating new divs or line breaks
+//       e.preventDefault();
+//     }
+//   });
+// });
+/////////////////////////////////////////////////////////////////////////////
